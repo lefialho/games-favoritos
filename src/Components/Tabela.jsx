@@ -1,8 +1,8 @@
 import { elements } from '../Data';
-import { useRef } from "react";
-import { useEffect, useState } from "react";
-import { Legenda } from "./Legenda";
-import { Modal } from "./Modal";
+import { useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { Legenda } from './Legenda';
+import { Modal } from './Modal';
 import { TabelaWrapper } from './TabelaStyles';
 
 export function Tabela() {
@@ -14,7 +14,7 @@ export function Tabela() {
 
   useEffect(() => {
     setTabela(elements.Empresas);
-  }, [])
+  }, []);
 
   function openModal(e) {
     const index = e.currentTarget.getAttribute('data-index');
@@ -34,14 +34,15 @@ export function Tabela() {
 
   return (
     <>
-      <TabelaWrapper className='tabela-wrapper' onKeyDown={closeModalWithEsc}>
-        <ul className='tabela' ref={list}>
+      <TabelaWrapper className="tabela-wrapper" onKeyDown={closeModalWithEsc}>
+        <ul className="tabela" ref={list}>
           {tabela.map((empresa, index) => (
             <li
               key={empresa.Nome}
               style={{ gridColumn: empresa.Coluna, gridRow: empresa.Linha }}
             >
-              <button onClick={openModal}
+              <button
+                onClick={openModal}
                 className={`${empresa.Grupo} game`}
                 style={{ '--colorButtons': empresa.Cor }}
                 data-group={empresa.Grupo}
@@ -59,9 +60,15 @@ export function Tabela() {
 
       {modal && (
         <Modal dadosTabela={modalData} setModal={setModal}>
-          <button ref={btnClose} className='modal-close' onClick={() => setModal(false)}>X</button>
+          <button
+            ref={btnClose}
+            className="modal-close"
+            onClick={() => setModal(false)}
+          >
+            X
+          </button>
         </Modal>
       )}
     </>
-  )
+  );
 }

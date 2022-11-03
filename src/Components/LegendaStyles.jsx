@@ -20,7 +20,7 @@ export const Lista = styled.ul`
     text-transform: capitalize;
 
     ::before {
-      content: "";
+      content: '';
       display: inline-block;
       width: 25px;
       height: 25px;
@@ -30,10 +30,10 @@ export const Lista = styled.ul`
 
     :focus-visible {
       background: transparent;
-    } 
+    }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 540px) {
     display: grid;
     justify-content: start;
   }

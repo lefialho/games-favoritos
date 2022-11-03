@@ -27,9 +27,14 @@ export const TabelaWrapper = styled.section`
     cursor: pointer;
 
     &:hover,
-    button:focus-visible {
+    :focus-visible {
       background-color: currentColor;
       transform: scale(1.1);
+
+      b,
+      span {
+        color: var(--primary-color);
+      }
     }
 
     &.active {
@@ -42,21 +47,14 @@ export const TabelaWrapper = styled.section`
     }
   }
 
-  button:focus-visible b,
-  button:focus-visible span,
-  .game:hover b,
-  .game:hover span {
-    color: var(--primary-color) !important;
-  }
-
   b {
-    font-size: clamp(1rem, 1.7vw, 2rem);
+    font-size: clamp(1.5rem, 1.7vw, 2rem);
     font-weight: bold;
     line-height: 1.2;
   }
 
   span {
-    font-size: clamp(10px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 14px);
   }
 
   @media (max-height: 740px) {
@@ -73,6 +71,7 @@ export const TabelaWrapper = styled.section`
       min-height: 100px;
       max-width: 100px;
       max-height: 100px;
+      padding: 0.5rem;
     }
   }
 `;
