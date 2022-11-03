@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #272727;
+  --yellow: #cbc634;
+  --red: #ff616d;
+  --blue: #5a88e5;
+  --green: #58ac30;
+  --gray: #ccc;
+  --dark-gray: #919191;
+  --toggle-theme: var(--gray);
+  --theme-track: var(--primary-color);
+  --colorButtons: transparent;
+}
+
+.App {
+  display: grid;
+  place-content: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+  height: 100vh;
+}
+
+body {
+  background: url(./assets/bg.svg), radial-gradient(circle, var(--primary-color) 0, black 100%);
+}
+
+body.theme-light {
+  --primary-color: white;
+  --gray: #606060;
+  --toggle-theme: var(--gray);
+  --theme-track: var(--primary-color);
+  background: url(/src/assets/bg2.svg), radial-gradient(circle, #fff 50%, #c8c6c6 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: var(--colorButtons);
+}
+
+button:focus-visible {
+  outline: none;
+}
+
+.modal-close {
+  display: grid;
+  place-content: center;
+  justify-self: end;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dark-gray);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.6;
+  padding-right: 1px;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-close:focus-visible {
+  background-color: transparent;
+  outline: 1px solid white;
+  box-shadow: 0 0 0 3px black;
+}
